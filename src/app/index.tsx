@@ -1,4 +1,4 @@
-import Calculadora from "@/components/calculadora/calculadora";
+import Calculadora from "@/src/components/calculadora";
 import React from "react";
 import { SafeAreaView, StatusBar, StyleSheet } from "react-native";
 
