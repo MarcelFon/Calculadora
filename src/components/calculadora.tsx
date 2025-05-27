@@ -5,11 +5,11 @@ import { Text, TouchableOpacity, View } from "react-native";
 
 export default function Calculadora() {
   const [input, setInput] = useState("");
-  
-  // Variável com todos os operadores
-  const isOperator = (value: string) => ["÷", "×", "-", "+", "%"].includes(value);
 
-  
+  // Variável com todos os operadores
+  const isOperator = (value: string) =>
+    ["÷", "×", "-", "+", "%"].includes(value);
+
   const calculate = (expression: string) => {
     try {
       const result = eval(
@@ -34,7 +34,7 @@ export default function Calculadora() {
       setInput(result);
       return;
     }
-    
+
     if (value === "⌫") {
       // Caso o valor seja "Erro" no próximo input a string será cortada
       setInput((prev) => (prev === "Erro" ? "" : prev.slice(0, -1)));
@@ -51,20 +51,20 @@ export default function Calculadora() {
         if (isOperator(lastChar)) {
           return prev.slice(0, -1) + value;
         }
-         
+
         // Se algum erro ocorrer, retorna string "erro"
         const result = calculate(prev);
         if (result === "Erro") return "Erro";
-        
+
         // Se o operador for selecionado mais de uma vez a operação é automaticamente resolvida
         return result + value;
       }
-        
+
       // retorna o valor da operação
       return prev + value;
     });
   };
-  
+
   const buttons = [
     ["C", "÷", "%", "⌫"],
     ["7", "8", "9", "×"],
@@ -109,6 +109,7 @@ export default function Calculadora() {
           </View>
         ))}
       </View>
-    </View>
-  );
+    </View>
+  );
 }
+

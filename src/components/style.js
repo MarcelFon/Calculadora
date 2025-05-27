@@ -65,6 +65,21 @@ export const styles = StyleSheet.create({
   },
   empty: {
     width: "25%",
-    height: 90,
-  },
+    height: 90,
+  },
+  botao: {
+    backgroundColor: "#333",
+    padding: 20,
+    margin: 8,
+    borderRadius: 12,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  textoBotao: {
+    color: "#fff",
+    fontSize: 24,
+  },
 });
